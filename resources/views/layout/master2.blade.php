@@ -145,7 +145,7 @@
 
 
     <!-- Footer -->
-	<<footer>
+	<footer>
         <div class="f-footer">
             <div class="row ff-footer">
                 <div class="left-footer">
@@ -218,7 +218,7 @@
                     <i class="far fa-copyright"> </i> Copyright © 2013.Bản quyền thuộc về Nhà vườn Vân Thủy
                 </div>
                 <div class="col r-img-footer">
-                    <img src="{{ asset('bonsai/images/fb.jpg') }}">
+{{--                    <img src="{{ asset('bonsai/images/fb.jpg') }}">--}}
                 </div>
             </div>
         </div>

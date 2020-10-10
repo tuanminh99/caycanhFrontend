@@ -150,7 +150,7 @@
 				<ul>
 					<li>
 						<div class="menu-nav">
-							<a href="{{ route('index') }}">Trang chủ</a>
+							<a href="{{ route('index')}}">Trang chủ</a>
 						</div>
 					</li>
 					<li>

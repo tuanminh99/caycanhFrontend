@@ -7,6 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="efa96f12-ae01-488c-b084-a6dd7fc656fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/sanpham.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/sanpham.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +152,11 @@
       <workItem from="1602120585098" duration="15425000" />
       <workItem from="1602206550620" duration="3655000" />
       <workItem from="1602211031059" duration="4884000" />
-      <workItem from="1602236746532" duration="718000" />
+      <workItem from="1602236746532" duration="1696000" />
+      <workItem from="1602238766054" duration="893000" />
+      <workItem from="1602240360799" duration="797000" />
+      <workItem from="1602241554542" duration="63000" />
+      <workItem from="1602241654162" duration="192000" />
     </task>
     <servers />
   </component>
@@ -166,16 +173,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601971814944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601971814944" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602206782511">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602237924892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602206782511" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602237924892" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602213715521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
