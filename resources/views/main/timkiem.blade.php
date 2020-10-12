@@ -9,7 +9,7 @@
             <div class="null">
             </div>
             <div class="newfeed">
-                <h3>TIN NỔI BẬT</h3>
+                <h3>TIN NỔI BẬTTTT</h3>
                 <ul>
                     @foreach($hotInfos as $info)
                         <li>
