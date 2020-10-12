@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="{{asset('bonsai/js/bootstrap.min.js')}}"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
-	<title></title>
+	@yield('title')
 </head>
 <body>
 	<!-- Header -->
@@ -26,7 +26,7 @@
                     <div class="col-sm-5 col-lg-5 col-5 p-img">
                         <img src="{{ asset('bonsai/images/phone.png') }}">
                         <a href="">
-                            <p>Hotline: <b>0123 456 789</b></p>
+                            <p>Hotline: <b>{{getConfigValue('Hotline')}}</b></p>
                         </a>
                     </div>
                     <div class="col-sm-1 col-lg-1 col-1 f-img">
@@ -145,7 +145,7 @@
 
 
     <!-- Footer -->
-	<<footer>
+	<footer>
         <div class="f-footer">
             <div class="row ff-footer">
                 <div class="left-footer">
@@ -218,7 +218,7 @@
                     <i class="far fa-copyright"> </i> Copyright © 2013.Bản quyền thuộc về Nhà vườn Vân Thủy
                 </div>
                 <div class="col r-img-footer">
-                    <img src="{{ asset('bonsai/images/fb.jpg') }}">
+{{--                    <img src="{{ asset('bonsai/images/fb.jpg') }}">--}}
                 </div>
             </div>
         </div>

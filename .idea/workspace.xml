@@ -6,7 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efa96f12-ae01-488c-b084-a6dd7fc656fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/main/timkiem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Layout_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Layout_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/list_categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/list_categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/list_categories/tintucchitiet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/list_categories/tintucchitiet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/gioithieu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/gioithieu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/lienhe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/lienhe.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/sanpham.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/sanpham.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/sanphamchitiet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/sanphamchitiet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/tintuc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/tintuc.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +125,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iUlLmbimpdHqv424XfBToTfymH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -120,7 +135,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../caycanh" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -149,7 +170,17 @@
       <workItem from="1602120585098" duration="15425000" />
       <workItem from="1602206550620" duration="3655000" />
       <workItem from="1602211031059" duration="4884000" />
-      <workItem from="1602236746532" duration="718000" />
+      <workItem from="1602236746532" duration="1696000" />
+      <workItem from="1602238766054" duration="893000" />
+      <workItem from="1602240360799" duration="797000" />
+      <workItem from="1602241554542" duration="63000" />
+      <workItem from="1602241872090" duration="883000" />
+      <workItem from="1602301403744" duration="601000" />
+      <workItem from="1602386528566" duration="3852000" />
+      <workItem from="1602413169705" duration="2702000" />
+      <workItem from="1602418092621" duration="2356000" />
+      <workItem from="1602467117255" duration="1977000" />
+      <workItem from="1602472182679" duration="3220000" />
     </task>
     <servers />
   </component>
@@ -166,38 +197,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601971814944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601971814944" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602206782511">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602472228153">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602206782511" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602213715521">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602472228153" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602472413863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602213715521" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602472413863" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/main/index.blade.php</url>
-          <line>96</line>
+          <line>99</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/main/index.blade.php</url>
-          <line>69</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/main/index.blade.php</url>
-          <line>70</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

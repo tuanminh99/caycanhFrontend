@@ -12,7 +12,6 @@
 */
 
 use App\Http\Controllers\Layout_Controller;
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,6 +20,7 @@ Route::group(['prefix' => 'layout'], function () {
     Route::get('index', 'Layout_Controller@index' )->name('index');
     Route::get('gioithieu', 'Layout_Controller@gioithieu' )->name('gioithieu');
     Route::get('sanpham', 'Layout_Controller@sanpham' )->name('sanpham');
+    Route::get('tim-kiem', 'Layout_Controller@timkiem')->name('timkiem');
     Route::get('tintuc', 'Layout_Controller@tintuc' )->name('tintuc');
     Route::get('lienhe', 'Layout_Controller@lienhe' )->name('lienhe');
     Route::get('sanphamchitiet/{id}', 'Layout_Controller@sanphamchitiet' )->name('sanphamchitiet');

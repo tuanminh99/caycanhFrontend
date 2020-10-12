@@ -14,7 +14,7 @@
 	<script type="text/javascript" src="{{asset('bonsai/js/jsSanPham.js')}}"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
-	<title></title>
+	@yield('title')
 </head>
 <body>
 	<!-- Header -->
@@ -55,16 +55,16 @@
 				<div class=" col-2 col-lg-2 col-sm-5 ">
                     <a href="{{ route('index')}}"><img src="{{ asset('bonsai/images/logo.png') }}"></a>
 				</div>
-				<div class=" col-4 col-lg-4 col-sm-5 search-box">
+				<form method="get" action="{{route('timkiem')}}" class=" col-4 col-lg-4 col-sm-5 search-box">
 					<div class="input-group mb-3">
-					  <input type="text" class="form-control" placeholder="Tìm kiếm">
+					  <input name="key" type="text" class="form-control" placeholder="Tìm kiếm">
 						<div class="input-group-append">
-						    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+						    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
 						    	<i class="fas fa-search"></i>
 						    </button>
 					  	</div>
 					</div>
-				</div>
+				</form>
 				<div class=" col-3 col-lg-3 col-sm-5 hand">
 					<img src="{{ asset('bonsai/images/hand1.png') }}">
 					<p>
@@ -150,7 +150,7 @@
 				<ul>
 					<li>
 						<div class="menu-nav">
-							<a href="{{ route('index') }}">Trang chủ</a>
+							<a href="{{ route('index')}}">Trang chủ</a>
 						</div>
 					</li>
 					<li>

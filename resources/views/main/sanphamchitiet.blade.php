@@ -1,5 +1,8 @@
 @extends('layout.master2')
 @section('content')
+@section('title')
+    <title>Sản phẩm chi tiết</title>
+@endsection
 <section class="section-product">
     <div class="link">
         <a href="{{route('index')}}"> Trang chủ </a> > <a href="{{route('sanpham')}}"> Sản phẩm </a> >
@@ -40,14 +43,14 @@
                     <h4>{{number_format($product->price,0)}}<u>đ</u></h4>
                 </div>
                 <div class="total">
-                    <p>Số lượng:</p>
+{{--                    <p>Số lượng:</p>--}}
                     <form class="form-inline">
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="number" class="form-control" id="click" >
-                        </div>
-                      <button type="submit" class="btn btn-success mb-2">
+{{--                        <div class="form-group mx-sm-3 mb-2">--}}
+{{--                            <input type="number" class="form-control" id="click" >--}}
+{{--                        </div>--}}
+                      <a href="{{route('lienhe')}}" type="submit" class="btn btn-success mb-2">
                           <i class="fas fa-shopping-cart">  Đặt hàng</i>
-                      </button>
+                      </a>
                     </form>
                 </div>
             </div>
@@ -116,7 +119,7 @@
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">{{$product->name}}</h5>
-                      <p class="card-text"><small class="text-muted">{{number_format($product->price)}}</small></p>
+                      <p class="card-text"><small class="text-muted">{{number_format($product->price)}}đ</small></p>
                     </div>
                   </div>
             </div>

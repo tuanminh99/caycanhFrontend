@@ -1,5 +1,8 @@
 @extends('layout.master')
 @section('content')
+@section('title')
+    <title>Sản phẩm</title>
+@endsection
     <section class=" section-container">
         <div class="row row-section">
             <div class="l-content">
@@ -84,8 +87,8 @@
 {{--                                        @endif</span>--}}
                                     <span>{!!Str::limit($product->description,150)!!}</span>
                                     <br>
-                                    <button type="button" class="btn btn-light">Chi tiết</button>
-                                    <button type="button" class="btn btn-light">Mua ngay</button>
+                                    <a href="{{route('sanphamchitiet',['id'=>$product->id])}}" type="button" class="btn btn-light">Chi tiết</a>
+{{--                                    <button type="button" class="btn btn-light">Mua ngay</button>--}}
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ Str::limit($product->name, 20) }}</h5>

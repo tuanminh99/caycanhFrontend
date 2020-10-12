@@ -1,5 +1,8 @@
 @extends('layout.master')
 @section('content')
+@section('title')
+    <title>Trang chủ</title>
+@endsection
     <!-- Section -->
     <section class=" section-container">
         <div class="row row-section">

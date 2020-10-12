@@ -1,5 +1,8 @@
 @extends('layout.master')
 @section('content')
+@section('title')
+    <title>Tin tức chi tiết</title>
+@endsection
 <section class=" section-container">
     <div class="row row-section">
         <div class="l-content">

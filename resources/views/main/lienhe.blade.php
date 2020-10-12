@@ -1,5 +1,8 @@
 @extends('layout.master')
 @section('content')
+@section('title')
+    <title>Liên hệ</title>
+@endsection
 <section class=" section-container">
     <div class="row row-section">
         <div class="l-content">
@@ -51,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="contact-form col-lg-6">
-                        <p>Mọi ý kiến đóng góp xin vui lòng điền vào Form dưới đây và gửi cho
+                        <p>Mua hàng hoặc có ý kiến đóng góp xin vui lòng điền vào Form dưới đây và gửi cho
                         chúng tôi. Xin chân thành cảm ơn!</p>
                         <form action="{{route('lienhes')}}" method="POST">
                             @csrf
@@ -63,10 +66,12 @@
                             <input type="text" name="address"> <br>
                             <label for="phone">Điện thoại</label>
                             <input type="text" name="phone"> <br>
-                            <label for="title">Tiêu đề </label>
-                            <input type="text" name="title"> <br>
+{{--                            <label for="title">Tiêu đề </label>--}}
+{{--                            <input type="text" name="title"> <br>--}}
                             <label for="content">Nội dung</label>
                             <input type="text" name="contents"> <br>
+                            <label for="content">Số lượng</label>
+                            <input type="text" name="quantum"> <br>
                             <input type="submit" value="Gửi">
                             <input type="reset" value="Nhập lại">
                         </form>

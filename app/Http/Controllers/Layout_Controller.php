@@ -46,7 +46,8 @@ class Layout_Controller extends Controller
             'email'=> $request->mail,
             'address'=> $request->address,
             'phone'=> $request->phone,
-            'contents'=>$request->contents
+            'contents'=>$request->contents,
+            'quantum'=>$request->quantum
         ]);
         return redirect() -> route('index');
     }
@@ -70,11 +71,18 @@ class Layout_Controller extends Controller
         return view('list_categories.index',compact('hotInfos','categories', 'products', 'cate', 'cate1'));
     }
 
+    public function timkiem(Request $request){
+        $hotInfos = Info::inRandomOrder()->limit(3)->get();
+        $products = Product::where('name', 'like', '%'.$request->key.'%')->paginate(4);
+        $cate = Category::all();
+        $key = $request->key;
+        return view('main.timkiem',compact('hotInfos','categories', 'products', 'cate', 'key'));
+    }
+
     public function tintucchitiet($id){
         $infos = Info::all();
         $hotInfos =Info::inRandomOrder()->limit(3)->get();
         $cate = Category::all();
-
         $inf = Info::find($id);
 
         return view('list_categories.tintucchitiet',compact('hotInfos','cate','infos', 'inf'));
