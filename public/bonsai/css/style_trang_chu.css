@@ -124,7 +124,11 @@ a.btn.btn-light {
     z-index: 1;
 }
 .show-infor span {
-    font-size: 15px;
+    font-size: 12px;
+    color: white;
+}
+.show-infor1 span {
+    font-size: 12px;
     color: white;
 }
 .card:hover .show-infor {

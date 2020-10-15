@@ -52,7 +52,7 @@ class Layout_Controller extends Controller
         return redirect() -> route('index');
     }
     public function sanpham(){
-        $products = Product::all();
+        $products = Product::paginate(16);
         $cate = Category::all();
         $hotInfos = Info::inRandomOrder()->limit(3)->get();
         return view('main.sanpham',compact('products','hotInfos','cate'));

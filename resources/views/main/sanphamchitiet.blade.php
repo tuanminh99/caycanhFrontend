@@ -11,14 +11,14 @@
     <div class="row infor-product ">
         <div class=" img-product">
             <div class="f-img-product">
-                <img src="http://localhost:8001{{$product->feature_image_path}}" alt="..." class=" img-content">
+                <img style="height: 485px; width: 486px;" src="http://localhost:8001{{$product->feature_image_path}}" alt="..." class=" img-content img-main">
             </div>
             <div class="row nth-img">
                 @php
                   $imgDetails = $product->imageDetails;
                 @endphp
                 @foreach($imgDetails as $img)
-                    <img src="http://localhost:8001{{$img->image_path}}" alt="..." class="col-3 img-thumbnail">
+                    <img style="width: 120px; height: 97px;" src="http://localhost:8001{{$img->image_path}}" alt="..." class="col-3 img-thumbnail img-detail">
                 @endforeach
             </div>
         </div>
@@ -112,7 +112,7 @@
                 <div class="card">
                     <img src="http://localhost:8001{{$product->feature_image_path}}" class="card-img-top" alt="...">
                     <div class="show-infor show-infor1">
-                        <span>{!! Str::limit($product->description) !!}</span>
+                        <span>{!! Str::limit($product->description,300) !!}</span>
                         <br>
                         <a href='{{route("sanphamchitiet",['id'=>$product->id])}}' class="btn btn-light" onclick="san_pham_chi_tiet()">Chi tiết</a>
 
@@ -127,4 +127,12 @@
         </div>
     </div>
 </section>
+<script>
+    $('.img-detail').on('click', function (){
+        $img = $(this);
+
+        $('.img-main').attr('src', $img.attr('src'))
+
+    })
+</script>
 @endsection

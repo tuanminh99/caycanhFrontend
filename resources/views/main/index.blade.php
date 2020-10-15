@@ -81,13 +81,13 @@
                         <div class="card">
                             <img src="http://localhost:8001{{$p->feature_image_path}}" class="card-img-top" alt="...">
                             <div class="show-infor1">
-                                <span>{!!Str::limit($p->description,140)!!}</span>
+                                <span>{!!Str::limit($p->description,300)!!}</span>
                                 <br/>
                                 <a href="{{route('sanphamchitiet',['id'=>$p->id])}}" type="button" class="btn btn-light">Chi tiết</a>
 {{--                                <button type="button" class="btn btn-light">Mua ngay</button>--}}
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{Str::limit($p->name,20)}}</h5>
+                                <h5 title="{{$p->name}}" class="card-title">{{Str::limit($p->name,20)}}</h5>
                                 <p class="card-text"><small class="text-muted">{{number_format($p->price)}}đ</small></p>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                     <div class="card">
                         <img src="http://localhost:8001{{$info->images}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><a href='{{route("tintucchitiet",['id'=>$info->id])}}'>{{Str::limit($info->titles,20)}}</a></h5>
+                            <h5 title="{{$info->titles}}" class="card-title"><a href='{{route("tintucchitiet",['id'=>$info->id])}}'>{{Str::limit($info->titles,20)}}</a></h5>
                             <p class="card-text"><small class="text-muted">
                                     <i class="far fa-clock">{{$info->created_at->format('d-m-Y')}}</i>
                                 </small></p>
@@ -183,4 +183,8 @@
         </div>
     </div>
     <!-- End Comment -->
+<script>
+    $()
+</script>
 @endsection
+

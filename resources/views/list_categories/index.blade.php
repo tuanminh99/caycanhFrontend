@@ -86,13 +86,13 @@
 {{--                                    @else--}}
 {{--                                        {!!catchuoi_tuybien($product->description,$socancat)!!}...--}}
 {{--                                    @endif--}}
-                                    <span>{!! Str::limit($product->description,140) !!}</span>
+                                    <span>{!! Str::limit($product->description,300) !!}</span>
                                     <br>
                                     <a href='{{route("sanphamchitiet",['id'=>$product->id])}}' class="btn btn-light">Chi tiết</a>
 
                                 </div>
                                 <div class="card-body">
-                                  <h5 class="card-title">{{Str::limit($product->name, 20)}}</h5>
+                                  <h5 title="{{$product->name}}" class="card-title">{{Str::limit($product->name, 20)}}</h5>
                                   <p class="card-text"><small class="text-muted">{{number_format($product->price)}}đ</small></p>
                                 </div>
                               </div>
