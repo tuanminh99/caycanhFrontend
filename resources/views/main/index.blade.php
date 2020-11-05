@@ -21,44 +21,8 @@
                 </div>
             </div>
         </div>
-{{--        <div class=" new_product">--}}
-{{--            <div class="ban_chay">--}}
-{{--                <i class="fab fa-pagelines">--}}
-{{--                    <h5>Sản phẩm bán chạy</h5>--}}
-{{--                </i>--}}
-{{--            </div>--}}
-{{--            <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
-{{--            <div class="more">--}}
-{{--                <a href="#">Xem tất cả>></a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="row product">--}}
-{{--            <div class="product-content">--}}
-{{--                <img src="{{asset('bonsai/images/banner1.jpg')}}">--}}
-{{--            </div>--}}
-{{--            <div class=" product-list">--}}
-{{--                <div class="row list1">--}}
-{{--                    @foreach($sellings as $sell)--}}
-{{--                    <div class="col col-list">--}}
-{{--                        <div class="card">--}}
-{{--                            <img src="http://localhost:8001{{$sell->feature_image_path}}" class="card-img-top" alt="...">--}}
-{{--                            <div class="show-infor">--}}
-{{--                                <span>{!! Str::limit($sell->description,140) !!}</span>--}}
-{{--                                <br/>--}}
-{{--                                <button type="button" class="btn btn-light">Chi tiết</button>--}}
-{{--                                <button type="button" class="btn btn-light">Mua ngay</button>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h5 class="card-title">{{Str::limit($sell->name,20)}}</h5>--}}
-{{--                                <p class="card-text"><small class="text-muted">{{number_format($sell->price)}}</small></p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-@foreach($cate as $c)
+
+        @foreach($cate as $c)
         <div class=" new_product">
             <div class="ban_chay">
                 <i class="fab fa-pagelines">
@@ -135,51 +99,23 @@
             <h2>Ý kiến khách hàng</h2>
         </div>
         <div class="d-lg-flex flex-sm-row  justify-content-lg-between justify-content-sm-center customer-review-list">
+            @foreach($contacts as $c)
             <div class="customer-review-item">
                 <div class="customer-review-message">
                     <div class="icon">
                         <img src="{{ asset('bonsai/images/icon.png') }}" alt="">
                     </div>
-                    <p>Mỗi loài hoa mang một thông điệp ý nghĩa mà bạn dành tặng cho người thân. Hoa lụa Phương Thảo xin giới thiệu ý nghĩa một số loài hoa thông dụng trong cuộc sống hàng ngày tới các bạn. Hy vọng rằng nó sẽ giúp ích cho các bạn mỗi lần tặng hoa...</p>
+                    <p>{!! \Illuminate\Support\Str::limit($c->contents, 200)!!}</p>
                 </div>
                 <div class="customer-review-info">
                     <img src="{{ asset('bonsai/images/avatar.png') }}" alt="">
                     <div class="customer-review-name">
-                        <b>Nguyễn Xuân Anh</b>
-                        <p>Hà Nội</p>
+                        <b>{{$c->name}}</b>
+                        <p>{{$c->address}}</p>
                     </div>
                 </div>
             </div>
-            <div class="customer-review-item">
-                <div class="customer-review-message">
-                    <div class="icon">
-                        <img src="{{ asset('bonsai/images/icon.png') }}" alt="">
-                    </div>
-                    <p>Mỗi loài hoa mang một thông điệp ý nghĩa mà bạn dành tặng cho người thân. Hoa lụa Phương Thảo xin giới thiệu ý nghĩa một số loài hoa thông dụng trong cuộc sống hàng ngày tới các bạn. Hy vọng rằng nó sẽ giúp ích cho các bạn mỗi lần tặng hoa...</p>
-                </div>
-                <div class="customer-review-info">
-                    <img src="{{ asset('bonsai/images/avatar_02.png') }}" alt="">
-                    <div class="customer-review-name">
-                        <b>Nguyễn Xuân Anh</b>
-                        <p>Hà Nội</p>
-                    </div>
-                </div>
-            </div>
-            <div class="customer-review-item">
-                <div class="customer-review-message">
-                    <div class="icon">
-                        <img src="{{ asset('bonsai/images/icon.png') }}" alt="">
-                    </div>
-                    <p>Mỗi loài hoa mang một thông điệp ý nghĩa mà bạn dành tặng cho người thân. Hoa lụa Phương Thảo xin giới thiệu ý nghĩa một số loài hoa thông dụng trong cuộc sống hàng ngày tới các bạn. Hy vọng rằng nó sẽ giúp ích cho các bạn mỗi lần tặng hoa...</p>
-                </div>
-                <div class="customer-review-info">
-                    <img src="{{ asset('bonsai/images//avatar_03.png') }}" alt="">
-                    <div class="customer-review-name">
-                        <b>Nguyễn Xuân Anh</b>
-                        <p>Hà Nội</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- End Comment -->

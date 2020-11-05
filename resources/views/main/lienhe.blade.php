@@ -70,8 +70,6 @@
 {{--                            <input type="text" name="title"> <br>--}}
                             <label for="content">Nội dung</label>
                             <input type="text" name="contents"> <br>
-                            <label for="content">Số lượng</label>
-                            <input type="text" name="quantum"> <br>
                             <input type="submit" value="Gửi">
                             <input type="reset" value="Nhập lại">
                         </form>

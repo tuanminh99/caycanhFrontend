@@ -18,8 +18,9 @@ class Layout_Controller extends Controller
     public function index(){
         $cate = Category::all();
         $hotInfos = Info::inRandomOrder()->limit(4)->get();
+        $contacts = Contact::inRandomOrder()->orderBy('created_at')->limit(3)->get();
 //        $sellings = Product::orderBy('purchases', 'desc')->limit(4)->get();
-        return view('main.index', ['cate'=>$cate,'hotInfos'=>$hotInfos]);
+        return view('main.index', ['cate'=>$cate,'hotInfos'=>$hotInfos, 'contacts'=>$contacts]);
     }
     public function gioithieu(){
         $intros = Intro::all();
@@ -46,8 +47,7 @@ class Layout_Controller extends Controller
             'email'=> $request->mail,
             'address'=> $request->address,
             'phone'=> $request->phone,
-            'contents'=>$request->contents,
-            'quantum'=>$request->quantum
+            'contents'=>$request->contents
         ]);
         return redirect() -> route('index');
     }

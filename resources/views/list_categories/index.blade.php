@@ -57,35 +57,14 @@
 
                 <div class=" product-list1">
                     <div class="row list1 list11">
-{{--                        @php--}}
-{{--                            function catchuoi_tuybien($string,$sochu)--}}
-{{--                            {--}}
-{{--                                $stringall = '';--}}
-{{--                                $cut=explode(" ",trim($string));--}}
 
-{{--                                for($i=0; $i<=$sochu; $i++)--}}
-{{--                                {--}}
-{{--                                    $stringall = $stringall.$cut[$i].' ';--}}
-{{--                                }--}}
-
-{{--                                return $stringall;--}}
-{{--                            }--}}
-{{--                        @endphp--}}
                         @foreach($products as $product)
 
                         <div style="max-width: 25%;min-width: 25%;" class="col col-list">
                             <div class="card">
                                 <img src="http://localhost:8001{{$product->feature_image_path}}" class="card-img-top" alt="...">
                                 <div class="show-infor">
-{{--                                    @php--}}
-{{--                                        $sokytu = explode(" ", $product->description);--}}
-{{--                                        $socancat = 25;--}}
-{{--                                    @endphp--}}
-{{--                                    @if(count($sokytu) <= $socancat)--}}
-{{--                                        {!! $product->description !!}--}}
-{{--                                    @else--}}
-{{--                                        {!!catchuoi_tuybien($product->description,$socancat)!!}...--}}
-{{--                                    @endif--}}
+
                                     <span>{!! Str::limit($product->description,300) !!}</span>
                                     <br>
                                     <a href='{{route("sanphamchitiet",['id'=>$product->id])}}' class="btn btn-light">Chi tiết</a>
