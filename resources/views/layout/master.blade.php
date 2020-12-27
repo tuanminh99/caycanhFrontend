@@ -22,9 +22,11 @@
 		<!-- Header -->
 		<div class="first-header">
 			<div class="container">
+
 				<div class="row menu-header">
+
 					<div class="col-sm-5 col-lg-5 col-5 p-img">
-						<img src="{{ asset('bonsai/images/phone.png') }}">
+                        <i class="fas fa-phone"></i>
 						<p>Hotline: <b>{{getConfigValue('Hotline')}}</b></p>
 					</div>
 					<div class="col-sm-1 col-lg-1 col-1 f-img">
@@ -48,6 +50,14 @@
 						</a>
 					</div>
 				</div>
+
+                <div class="row login">
+                    <div class="col-sm-5 col-lg-5 col-5">
+                        <i class="fas fa-sign-in-alt m-r-3"></i>
+                        <a href="{{ route('login')}}">Đăng nhập</a>
+
+                    </div>
+                </div>
 			</div>
 		</div>
 		<div class="container second-header">
@@ -134,6 +144,11 @@
 							<a href="{{ route('lienhe') }}">Liên hệ</a>
 						</div>
 					</li>
+                    <li style="margin-left: 20px">
+                        <div class="menu-nav">
+                            <a href="{{route('giohang')}}"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </li>
 				</ul>
 		</div>
 	</nav>

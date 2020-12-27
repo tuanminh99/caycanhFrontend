@@ -275,18 +275,19 @@ h5{
 	display: inline-block;
 }
 .present {
-    width: 30%;
+    width: 100%;
     background: #45AD0E;
     color: white;
     padding-left: 20px;
     float: left;
+    border-bottom: 1px solid #6c757d;
 }
 .present h5 {
     display: inline-block;
     margin-left: 20px;
 }
 .new img {
-    margin-left: -3px;
+    margin-left: 109px;
     margin-top: -4px;
 }
 /*End section*/
@@ -368,6 +369,20 @@ i.fab.fa-facebook {
 .little-a a{
   color: black;
 }
-
-
-
+.total-price {
+    width: 100%;
+    float: left;
+    padding: 20px 0;
+    border-top: 2px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    text-align: right;
+}
+.button-payment {
+    margin-top: 10px;
+}
+.table-payment{
+    width: 100%;
+    margin-bottom: 1em;
+    border-color: #ececec;
+    border-spacing: 0;
+}

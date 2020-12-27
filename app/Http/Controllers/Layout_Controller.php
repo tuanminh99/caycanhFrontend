@@ -28,6 +28,14 @@ class Layout_Controller extends Controller
         $hotInfos = Info::inRandomOrder()->limit(3)->get();
         return view('main.gioithieu',compact('intros','hotInfos','cate'));
     }
+    public function giohang(){
+        $cate = Category::all();
+        return view('main.giohang',compact('cate'));
+    }
+    public function thanhtoan(){
+        $cate = Category::all();
+        return view('main.thanhtoan',compact('cate'));
+    }
     public function tintuc(){
         $infos = Info::paginate(3);
         $cate = Category::all();

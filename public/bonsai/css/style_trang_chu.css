@@ -205,3 +205,20 @@ button.btn.btn-outline-success {
     max-height: 400px;
     min-height: 300px;
 }
+.container{
+    display: flex;
+    font-family: sans-serif;
+}
+.menu-header {
+    left: -3%;
+}
+.login{
+    width: 27%;
+    font-size: 14px;
+    position: relative;
+    right: -530px;
+    align-items: center;
+}
+.m-r-3{
+    margin-right: 3px;
+}
