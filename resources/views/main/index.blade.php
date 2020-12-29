@@ -29,7 +29,7 @@
                     <h5>{{$c->name}}</h5>
                 </i>
             </div>
-            <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--            <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
             <div class="more">
                 <a href="{{route('loaisanpham',['slug'=>$c->slug])}}">Xem tất cả>></a>
             </div>

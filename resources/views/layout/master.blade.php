@@ -55,6 +55,9 @@
                     <div class="col-sm-5 col-lg-5 col-5">
                         <i class="fas fa-sign-in-alt m-r-3"></i>
                         <a href="{{ route('login')}}">Đăng nhập</a>
+                        <i class="fas fa-user-plus m-l-22"></i>
+                        <a href="{{ route('register')}}">Đăng ký</a>
+
 
                     </div>
                 </div>

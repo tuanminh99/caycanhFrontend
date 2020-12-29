@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="row menu-header">
                     <div class="col-sm-5 col-lg-5 col-5 p-img">
-                        <img src="{{ asset('bonsai/images/phone.png') }}">
+                        <i class="fas fa-phone"></i>
                         <a href="">
                             <p>Hotline: <b>{{getConfigValue('Hotline')}}</b></p>
                         </a>
@@ -48,6 +48,16 @@
                         <a href="https://www.youtube.com/channel/UC_1kWW8NWpsrXUxi7aXZccA" target="_blank">
                             <img src="{{ asset('bonsai/images/y.png') }}">
                         </a>
+                    </div>
+
+                </div>
+                <div class="row login">
+                    <div class="col-sm-5 col-lg-5 col-5">
+                        <i class="fas fa-sign-in-alt m-r-3"></i>
+                        <a href="{{ route('login')}}">Đăng nhập</a>
+                        <i class="fas fa-user-plus m-l-22"></i>
+                        <a href="{{ route('register')}}">Đăng ký</a>
+
                     </div>
                 </div>
             </div>
@@ -136,6 +146,11 @@
 							<a href="{{ route('lienhe') }}">Liên hệ</a>
 						</div>
 					</li>
+                    <li style="margin-left: 20px">
+                        <div class="menu-nav">
+                            <a href="{{route('giohang')}}"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </li>
 				</ul>
 		</div>
 	</nav>

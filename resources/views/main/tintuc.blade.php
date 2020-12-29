@@ -53,7 +53,7 @@
                             <h5>Tin Tức</h5>
                         </i>
                     </div>
-                    <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                    <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
                 </div>
                 @foreach($infos as $info)
                     <div class="row no-gutters hh">

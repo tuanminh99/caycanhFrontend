@@ -52,7 +52,7 @@
                             <h5>Sản phẩm</h5>
                         </i>
                     </div>
-                    <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                    <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
                 </div>
 
                 <div class=" product-list1">

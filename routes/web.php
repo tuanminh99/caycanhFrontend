@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', 'AdminController@login')->name('login');
+Route::get('/register', 'AdminController@register')->name('register');
 Route::group(['prefix' => 'layout'], function () {
     Route::get('master', 'Layout_Controller@master' );
     Route::get('index', 'Layout_Controller@index' )->name('index');

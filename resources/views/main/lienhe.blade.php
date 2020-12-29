@@ -50,7 +50,7 @@
                             <h5>Liên hệ</h5>
                         </i>
                     </div>
-                    <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                    <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
                 </div>
                 <div class="row">
                     <div class="contact-form col-lg-6">

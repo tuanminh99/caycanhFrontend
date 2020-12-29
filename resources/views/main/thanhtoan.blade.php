@@ -24,11 +24,11 @@
 
         </div>
         <div class="new">
-            <div class="present">
+            <div class="present-pay">
                 <i class="fab fa-pagelines">
-                    <h5>Thanh toán</h5>
+                    <h5 style="margin-left: 20px">Thanh toán</h5>
                 </i>
-                <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
             </div>
 
         </div>
@@ -101,10 +101,16 @@
                             <td>50.000đ</td>
                         </tr>
                         <tr>
-                            <th scope="row">Tổng</th>
+                            <th scope="row">Phí vận chuyển</th>
                             <td></td>
                             <td></td>
-                            <td>50.000đ</td>
+                            <td>20.000đ</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="color: red">Tổng</th>
+                            <td></td>
+                            <td></td>
+                            <td style="color: red">70.000đ</td>
                         </tr>
                         <tr>
                             <th scope="row" style="color: #ff000c">* Trả tiền mặt khi nhận hàng</th>

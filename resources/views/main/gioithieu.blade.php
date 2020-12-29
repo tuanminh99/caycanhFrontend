@@ -50,7 +50,7 @@
                             <h5>Giới thiệu</h5>
                         </i>
                     </div>
-                    <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                    <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
                 </div>
                 <div class="content-gt">
                     @foreach($intros as $intro)

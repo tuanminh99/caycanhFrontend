@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Đăng nhập</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../admin/index2.html"><b>Admin</b>LTE</a>
+        <a href="../admin/index2.html"><b>Đăng nhập</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -78,12 +78,13 @@
                         </div>
         <!-- /.social-auth-links -->
 
-                        <p class="mb-1">
-                            <a href="forgot-password.html">I forgot my password</a>
-                        </p>
+{{--                        <p class="mb-1">--}}
+{{--                            <a href="forgot-password.html">I forgot my password</a>--}}
+{{--                        </p>--}}
                         <p class="mb-0">
-                            <a href="register.html" class="text-center">Register a new membership</a>
+                            <a href="{{route('register')}}" class="text-center">Đăng kí tài khoản</a>
                         </p>
+                        <a href="{{route('index')}}" class="text-center">Trở về trang chủ</a>
         </div>
         <!-- /.login-card-body -->
     </div>

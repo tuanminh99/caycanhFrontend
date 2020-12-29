@@ -49,8 +49,11 @@
 {{--                            <input type="number" class="form-control" id="click" >--}}
 {{--                        </div>--}}
                       <a href="{{route('lienhe')}}" type="submit" class="btn btn-success mb-2">
-                          <i class="fas fa-shopping-cart">  Đặt hàng</i>
-                      </a>
+                          <i class="fas fa-money-check-alt"> Đặt hàng</i>
+                      </a>&nbsp;
+                        <a href="#" type="submit" class="btn btn-success mb-2">
+                            <i class="fas fa-shopping-cart">  Thêm vào giỏ hàng</i>
+                        </a>
                     </form>
                 </div>
             </div>
@@ -102,7 +105,7 @@
                 <h5>Sản phẩm</h5>
             </i>
         </div>
-        <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--        <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
     </div>
 
     <div class=" product-list1">
