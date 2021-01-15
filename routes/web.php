@@ -29,6 +29,9 @@ Route::group(['prefix' => 'layout'], function () {
     Route::get('loaisanpham/{slug}', 'Layout_Controller@loaisanpham' )->name('loaisanpham');
     Route::get('tintucchitiet/{id}', 'Layout_Controller@tintucchitiet' )->name('tintucchitiet');
     Route::post('lienhe', 'Layout_Controller@lienhes' )->name('lienhes');
+    Route::get('addcart/{id}', 'Layout_Controller@addcart' )->name('addcart');
     Route::get('giohang', 'Layout_Controller@giohang' )->name('giohang');
+    Route::get('updatecart', 'Layout_Controller@updatecart' )->name('updatecart');
+    Route::get('deletecart', 'Layout_Controller@deletecart' )->name('deletecart');
     Route::get('thanhtoan', 'Layout_Controller@thanhtoan' )->name('thanhtoan');
 });

@@ -8,15 +8,28 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('bonsai/css/style_lienHe.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('bonsai/css/style_tintuc.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('bonsai/css/style_trang_chu.css')}}">
-	<script type="text/javascript" src="{{asset('bonsai/js/jquery-3.5.1.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('bonsai/js/bootstrap.bundle.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('bonsai/js/bootstrap.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('bonsai/js/jsSanPham.js')}}"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	@yield('title')
 </head>
 <body>
+<script type="text/javascript" src="{{asset('bonsai/js/jquery-3.5.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bonsai/js/bootstrap.bundle.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bonsai/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('bonsai/js/jsSanPham.js')}}"></script>
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
 	<!-- Header -->
 	<header>
 		<!-- Header -->

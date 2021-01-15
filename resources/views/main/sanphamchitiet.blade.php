@@ -3,6 +3,10 @@
 @section('title')
     <title>Sản phẩm chi tiết</title>
 @endsection
+@section('js')
+    <script src="{{asset('vendors/sweetAlert2/sweetalert2@10.js')}}"></script>
+    <script src="{{asset('adminAdd/main.js')}}"></script>
+@endsection
 <section class="section-product">
     <div class="link">
         <a href="{{route('index')}}"> Trang chủ </a> > <a href="{{route('sanpham')}}"> Sản phẩm </a> >
@@ -51,7 +55,9 @@
                       <a href="{{route('lienhe')}}" type="submit" class="btn btn-success mb-2">
                           <i class="fas fa-money-check-alt"> Đặt hàng</i>
                       </a>&nbsp;
-                        <a href="#" type="submit" class="btn btn-success mb-2">
+                        <a href="#" data-url="{{route('addcart',['id'=>$product->id])}}" type="submit" class="btn btn-success mb-2 add-cart">
+{{--                        <a onclick="AddCart({{$product->id}})" href="javascript:" type="submit" class="btn btn-success mb-2">--}}
+{{--                            <a href="{{route('giohang')}}" type="submit" class="btn btn-success mb-2">--}}
                             <i class="fas fa-shopping-cart">  Thêm vào giỏ hàng</i>
                         </a>
                     </form>
@@ -138,4 +144,27 @@
 
     })
 </script>
+<script>
+    function AddCart(event) {
+        event.preventDefault();
+        let url = $(this).data('url');
+
+        $.ajax({
+           type: "GET",
+           url: url,
+            dataType: 'json',
+            success: function (data) {
+                if (data.code === 200) {
+                    alertify.error('Thêm sản phẩm thành công!');
+                }
+            },
+            error: function () {
+            }
+        });
+    }
+    $(function (){
+        $('.add-cart').on('click',AddCart);
+    });
+</script>
+
 @endsection

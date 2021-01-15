@@ -271,6 +271,13 @@ h5 a:hover{
     height: 41px;
     line-height: 40px;
 }
+.new_cart {
+    background: #F3F3F3;
+    margin: 22px 0px;
+    height: 41px;
+    line-height: 40px;
+    width: 22%;
+}
 h5{
 	display: inline-block;
 }

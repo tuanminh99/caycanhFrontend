@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Category;
 use App\Contact;
 use App\Info;
 use App\Intro;
 use App\Product;
 use App\Setting;
+use Session;
 use Illuminate\Http\Request;
 
 class Layout_Controller extends Controller
@@ -30,11 +32,55 @@ class Layout_Controller extends Controller
     }
     public function giohang(){
         $cate = Category::all();
-        return view('main.giohang',compact('cate'));
+        $carts = session()->get('cart');
+        return view('main.giohang',compact('cate','carts'));
+
+    }
+    public function addcart($id){
+        $products = Product::find($id);
+        $cart = session()->get('cart');
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = $cart[$id]['quantity']+1;
+        }
+        else {
+            $cart[$id] = [
+                'name' => $products->name,
+                'price' => $products->price,
+                'quantity' => 1,
+                'image' => $products->feature_image_path
+            ];
+        }
+
+        session()->put('cart',$cart);
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], 200);
+    }
+    public function updatecart(Request $request) {
+        if ($request->id && $request->quantity) {
+            $carts = session()->get('cart');
+            $carts[$request->id]['quantity'] = $request->quantity;
+            session()->put('cart',$carts);
+            $carts = session()->get('cart');
+            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
+            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
+        }
+    }
+    public function deletecart(Request $request) {
+        if ($request->id) {
+            $carts = session()->get('cart');
+            unset($carts[$request->id]);
+            session()->put('cart',$carts);
+            $carts = session()->get('cart');
+            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
+            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
+        }
     }
     public function thanhtoan(){
         $cate = Category::all();
-        return view('main.thanhtoan',compact('cate'));
+        $carts = session()->get('cart');
+        return view('main.thanhtoan',compact('cate','carts'));
     }
     public function tintuc(){
         $infos = Info::paginate(3);

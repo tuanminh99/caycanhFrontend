@@ -23,56 +23,67 @@
             </div>
 
         </div>
-        <div class="new">
+        <div class="new_cart">
             <div class="present">
                 <i class="fab fa-pagelines">
                     <h5>Giỏ hàng</h5>
                 </i>
-                <img src="{{asset('bonsai/images/icon_section1.png')}}">
+{{--                <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
             </div>
 
         </div>
-        <div class="container-fluid">
-                <div class="col-md-12">
-                    <table class="table table-light">
-                        <thead>
-                        <tr style="background-color: #6c757d66">
-                            <th scope="col">#</th>
-                            <th scope="col">Tên sản phẩm</th>
-                            <th scope="col">Ảnh</th>
-                            <th scope="col">giá</th>
-                            <th scope="col">Số lượng</th>
-                            <th scope="col">Thành tiền</th>
-                            <th scope="col">Xoá</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Cây lưỡi hổ</td>
-                            <td><img class="#"></td>
-                            <td>100.000</td>
-                            <td>1</td>
-                            <td>100000</td>
-                            <td>Xoá</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-        </div>
-        <div class="total-price">
-            Tổng cộng:
-            <strong>
-                <span>15.000</span>
-            </strong>
-        </div>
-        <div class="button-payment">
-            <button type="button" class="btn btn-warning"><a href="{{route('thanhtoan')}}">Thanh toán</a></button>
-            <button type="button" class="btn btn-warning"><a href="{{route('sanpham')}}">Mua thêm sản phẩm</a></button>
+        <div class="cart_wrapper" style="margin-top: 33px; width: 100%;">
+            @include('main.components.cart_component')
         </div>
     </div>
 </section>
 <!-- End Section -->
+<script>
+    function cartUpdate(event) {
+        event.preventDefault();
+        let urlUpdateCart = $('.update_cart_url').data('url');
+        let id = $(this).data('id');
+        let quantity = $(this).parents('tr').find('input.quantity').val();
+        $.ajax({
+           type: "GET",
+           url: urlUpdateCart,
+           data: {id:id, quantity: quantity},
+            success: function (data) {
+                if (data.code === 200){
+                    $('.cart_wrapper').html(data.cart_component);
+                    alertify.error('Cập nhật giá thành công!');
+                }
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+    function cartDelete(event) {
+        event.preventDefault();
+        let urlDelete = $('.cart').data('url');
+        let id = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            url: urlDelete,
+            data: {id:id},
+            success: function (data) {
+                if (data.code === 200){
+                    $('.cart_wrapper').html(data.cart_component);
+                    alertify.error('Xoá sản phẩm thành công!');
+                }
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+    $(function () {
+       $(document).on('click','.cart-update',cartUpdate);
+        $(document).on('click','.cart-delete',cartDelete);
+    });
+</script>
+
 @endsection

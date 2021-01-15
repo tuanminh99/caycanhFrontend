@@ -81,46 +81,38 @@
                     <table class="table table-payment">
                         <thead>
                         <tr>
-                            <th scope="col">SẢN PHẨM</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" style="margin-left: 50px">TẠM TÍNH</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Tên sản phẩm</th>
+                            <th scope="col">đơn giá</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Thành tiền</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $total = 0;
+                        @endphp
+                        @foreach($carts as $id => $cart)
+                            @php
+                                $total += $cart['price'] * $cart['quantity'];
+                            @endphp
                         <tr>
-                            <th scope="row">Cây lưỡi hổ x 1</th>
-                            <td></td>
-                            <td></td>
-                            <td>50.000đ</td>
+                            <th scope="row">TM{{$id}}</th>
+                            <td>{{$cart['name']}}</td>
+                            <td>{{number_format($cart['price'])}}đ</td>
+                            <td>{{$cart['quantity']}}</td>
+                            <td>{{number_format($cart['price'] * $cart['quantity'])}}đ</td>
                         </tr>
-                        <tr>
-                            <th scope="row">Tạm tính</th>
-                            <td></td>
-                            <td></td>
-                            <td>50.000đ</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Phí vận chuyển</th>
-                            <td></td>
-                            <td></td>
-                            <td>20.000đ</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" style="color: red">Tổng</th>
-                            <td></td>
-                            <td></td>
-                            <td style="color: red">70.000đ</td>
-                        </tr>
-                        <tr>
-                            <th scope="row" style="color: #ff000c">* Trả tiền mặt khi nhận hàng</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
-                    <button style="margin-left: 15px" type="button" class="btn btn-warning"><a href="#"><b>ĐẶT HÀNG</b></a></button>
+                    <div style="float: right">
+                        <strong>Tổng tiền: {{number_format($total)}}đ</strong>
+                    </div><br/>
+                    <div style="color: red">
+                        <strong>* Lưu ý: Thanh toán khi nhận hàng</strong>
+                    </div>
+                    <button style="margin-left: 15px; margin-top: 30px;" type="button" class="btn btn-warning"><a href="#"><b>ĐẶT HÀNG</b></a></button>
                 </div>
             </div>
         </div>
