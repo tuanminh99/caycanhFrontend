@@ -33,7 +33,10 @@
 
         </div>
         <div class="container-fluid">
+            <form action="{{route('save_checkout')}}" method="post">
+                @csrf
             <div class="row">
+
                 <div class="col-md-7">
                     <div class="">
                         <b style="font-family: sans-serif">THANH TOÁN VÀ GIAO HÀNG</b>
@@ -42,34 +45,36 @@
                         <b>Họ và tên *</b>
                     </div>
                     <div style="margin-top: 5px">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập họ tên của bạn">
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Nhập họ tên của bạn">
                     </div>
                     <div style="margin-top: 15px">
                         <b>Địa chỉ *</b>
                     </div>
                     <div style="margin-top: 5px">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập địa chỉ của bạn">
+                        <input type="text" name="address" class="form-control" id="exampleInputEmail1"  placeholder="Nhập địa chỉ của bạn">
                     </div>
                     <div style="margin-top: 15px">
                         <b>Số điện thoại *</b>
                     </div>
                     <div style="margin-top: 5px">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập SĐT của bạn">
+                        <input type="number" name="phone" class="form-control" id="exampleInputEmail1"  placeholder="Nhập SĐT của bạn">
                     </div>
                     <div style="margin-top: 15px">
                         <b>Email *</b>
                     </div>
                     <div style="margin-top: 5px">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập email của bạn">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"  placeholder="Nhập email của bạn">
                     </div>
                     <div style="margin-top: 15px">
                         <b style="font-family: sans-serif">THÔNG TIN BỔ SUNG</b>
                     </div>
                     <div class="form-group" style="margin-top: 5px">
                         <label for="exampleFormControlTextarea1">Ghi chú đơn hàng</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="note" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </div>
+
+
                 <div class="col-md-5" style="border: 2px solid #1e7e34">
                     <div class="" style="padding: 18px 8px">
                         <b style="font-family: sans-serif">ĐƠN HÀNG CỦA BẠN</b>
@@ -112,9 +117,10 @@
                     <div style="color: red">
                         <strong>* Lưu ý: Thanh toán khi nhận hàng</strong>
                     </div>
-                    <button style="margin-left: 15px; margin-top: 30px;" type="button" class="btn btn-warning"><a href="#"><b>ĐẶT HÀNG</b></a></button>
+                    <button style="margin-left: 15px; margin-top: 30px;" type="submit" name="send_order" class="btn btn-warning"><b>ĐẶT HÀNG</b></button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </section>

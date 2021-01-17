@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="contact-form col-lg-6">
-                        <p>Mua hàng hoặc có ý kiến đóng góp xin vui lòng điền vào Form dưới đây và gửi cho
+                        <p>Ý kiến đóng góp xin vui lòng điền vào Form dưới đây và gửi cho
                         chúng tôi. Xin chân thành cảm ơn!</p>
                         <form action="{{route('lienhes')}}" method="POST">
                             @csrf
@@ -66,8 +66,6 @@
                             <input type="text" name="address"> <br>
                             <label for="phone">Điện thoại</label>
                             <input type="text" name="phone"> <br>
-{{--                            <label for="title">Tiêu đề </label>--}}
-{{--                            <input type="text" name="title"> <br>--}}
                             <label for="content">Nội dung</label>
                             <input type="text" name="contents"> <br>
                             <input type="submit" value="Gửi">

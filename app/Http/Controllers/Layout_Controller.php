@@ -9,6 +9,7 @@ use App\Info;
 use App\Intro;
 use App\Product;
 use App\Setting;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Http\Request;
 
@@ -82,6 +83,48 @@ class Layout_Controller extends Controller
         $carts = session()->get('cart');
         return view('main.thanhtoan',compact('cate','carts'));
     }
+    public function save_checkout(Request $request) {
+        $dataShippings = array();
+        $dataShippings['name'] = $request->name;
+        $dataShippings['email'] = $request->email;
+        $dataShippings['address'] = $request->address;
+        $dataShippings['phone'] = $request->phone;
+        $dataShippings['note'] = $request->note;
+        $shipping_id = DB::table('shippings')->insertGetId($dataShippings);
+        Session::put('shipping_id',$shipping_id);
+
+        //insert payment
+        $payment_data = array();
+        $payment_data['payment_status']= 'Đang chờ xử lý';
+        $payment_id = DB::table('payments')->insertGetId($payment_data);
+
+        //insert order
+        $order_data = array();
+        $carts = session()->get('cart');
+        $order_data['customer_id']= Session::get('customer_id');
+        $order_data['shipping_id']= Session::get('shipping_id');
+        $order_data['payment_id']= $payment_id;
+        $total = 0;
+            foreach($carts as $id => $cart) {
+                $total += $cart['price'] * $cart['quantity'];
+            }
+        $order_data['order_total']= $total;
+        $order_data['order_status']= 'Đang chờ xử lý';
+        $order_id = DB::table('orders')->insertGetId($order_data);
+
+        //insert order detail
+        foreach ($carts as $id => $cart) {
+            $order_d_data = array();
+            $order_d_data['order_id']= $order_id;
+            $order_d_data['product_id']=$id;
+            $order_d_data['product_name']= $cart['name'];
+            $order_d_data['product_price']= $cart['price'];
+            $order_d_data['product_quantity']= $cart['quantity'];
+            DB::table('order_details')->insert($order_d_data);
+        }
+
+        return redirect() -> route('index');
+    }
     public function tintuc(){
         $infos = Info::paginate(3);
         $cate = Category::all();
@@ -104,6 +147,42 @@ class Layout_Controller extends Controller
             'contents'=>$request->contents
         ]);
         return redirect() -> route('index');
+    }
+
+    public function login_customer(Request $request) {
+        $email = $request->email;
+        $password = md5($request->password);
+        $result = DB::table('customers')->where('email',$email)->where('password',$password)->first();
+        if ($result){
+            Session::put('customer_id',$result->customer_id);
+            return redirect() ->route('index');
+        }
+        else {
+            return redirect() ->route('login_checkout');
+        }
+
+    }
+    public function login_checkout() {
+        return view('checkout.login_checkout');
+    }
+    public function logout_checkout() {
+       Session::flush();
+       return redirect() -> route('login_checkout');
+    }
+    public function signup_checkout() {
+        return view('checkout.signup_checkout');
+    }
+    public function add_customer(Request $request) {
+        $data = array();
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['password'] = md5($request->password);
+        $data['phone'] = $request->phone;
+
+        $customer_id = DB::table('customers')->insertGetId($data);
+        Session::put('customer_id',$customer_id);
+        Session::put('name',$request->name);
+        return redirect() -> route('login_checkout');
     }
     public function sanpham(){
         $products = Product::paginate(16);

@@ -29,9 +29,17 @@ Route::group(['prefix' => 'layout'], function () {
     Route::get('loaisanpham/{slug}', 'Layout_Controller@loaisanpham' )->name('loaisanpham');
     Route::get('tintucchitiet/{id}', 'Layout_Controller@tintucchitiet' )->name('tintucchitiet');
     Route::post('lienhe', 'Layout_Controller@lienhes' )->name('lienhes');
+
     Route::get('addcart/{id}', 'Layout_Controller@addcart' )->name('addcart');
     Route::get('giohang', 'Layout_Controller@giohang' )->name('giohang');
     Route::get('updatecart', 'Layout_Controller@updatecart' )->name('updatecart');
     Route::get('deletecart', 'Layout_Controller@deletecart' )->name('deletecart');
     Route::get('thanhtoan', 'Layout_Controller@thanhtoan' )->name('thanhtoan');
+
+    Route::post('login_customer', 'Layout_Controller@login_customer' )->name('login_customer');
+    Route::get('login_checkout', 'Layout_Controller@login_checkout' )->name('login_checkout');
+    Route::get('logout_checkout', 'Layout_Controller@logout_checkout' )->name('logout_checkout');
+    Route::get('signup_checkout', 'Layout_Controller@signup_checkout' )->name('signup_checkout');
+    Route::post('add_customer', 'Layout_Controller@add_customer' )->name('add_customer');
+    Route::post('save_checkout', 'Layout_Controller@save_checkout' )->name('save_checkout');
 });

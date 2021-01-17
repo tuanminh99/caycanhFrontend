@@ -60,7 +60,19 @@
     </strong>
 </div>
 <div class="button-payment">
-    <button type="button" class="btn btn-warning"><a href="{{route('thanhtoan')}}">Thanh toán</a></button>
+    <?php
+    $customer_id = Session::get('id');
+    if ($customer_id != NULL) {
+    ?>
+        <button type="button" class="btn btn-warning"><a href="{{route('thanhtoan')}}">Thanh toán</a></button>
+    <?php
+    }
+    else{
+    ?>
+        <button type="button" class="btn btn-warning"><a href="{{route('login_checkout')}}">Thanh toán</a></button>
+    <?php
+    }
+    ?>
     <button type="button" class="btn btn-warning"><a href="{{route('sanpham')}}">Mua thêm sản phẩm</a></button>
 </div>
 </div>

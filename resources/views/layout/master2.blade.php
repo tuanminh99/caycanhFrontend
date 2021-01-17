@@ -67,10 +67,25 @@
                 </div>
                 <div class="row login">
                     <div class="col-sm-5 col-lg-5 col-5">
+                        <?php
+                        $customer_id = Session::get('id');
+                        if ($customer_id != NULL) {
+
+
+                        ?>
+                            <i class="fas fa-sign-out-alt"></i>
+                        <a href="{{ route('logout_checkout')}}">Đăng xuất</a>
+                        <?php
+                        }
+                        else{
+                        ?>
                         <i class="fas fa-sign-in-alt m-r-3"></i>
-                        <a href="{{ route('login')}}">Đăng nhập</a>
+                        <a href="{{ route('login_checkout')}}">Đăng nhập</a>
+                        <?php
+                        }
+                        ?>
                         <i class="fas fa-user-plus m-l-22"></i>
-                        <a href="{{ route('register')}}">Đăng ký</a>
+                        <a href="{{ route('signup_checkout')}}">Đăng ký</a>
 
                     </div>
                 </div>
