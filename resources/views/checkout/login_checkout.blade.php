@@ -26,10 +26,9 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
             @if(\Illuminate\Support\Facades\Session::get('mess') != null)
                 <script>
-                    alert('sai thong tin dang nhap')
+                    alert('Sai thông tin đăng nhập !')
                 </script>
             @endif
             <form action="{{route('login_customer')}}" method="post">
@@ -59,28 +58,11 @@
 {{--                            </label>--}}
 {{--                        </div>--}}
                     </div>
-                    <!-- /.col -->
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
-
-{{--            <div class="social-auth-links text-center mb-3">--}}
-{{--                <p>- OR -</p>--}}
-{{--                <a href="#" class="btn btn-block btn-primary">--}}
-{{--                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook--}}
-{{--                </a>--}}
-{{--                <a href="#" class="btn btn-block btn-danger">--}}
-{{--                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+--}}
-{{--                </a>--}}
-{{--            </div>--}}
-            <!-- /.social-auth-links -->
-
-            {{--                        <p class="mb-1">--}}
-            {{--                            <a href="forgot-password.html">I forgot my password</a>--}}
-            {{--                        </p>--}}
             <p class="mb-0">
                 <a href="{{route('signup_checkout')}}" class="text-center">Đăng kí tài khoản</a>
             </p>

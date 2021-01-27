@@ -67,10 +67,8 @@
                 <div class="row login">
                     <div class="col-sm-5 col-lg-5 col-5">
                         <?php
-                            $customer_id = Session::get('id');
+                            $customer_id = Session::get('customer_id');
                             if ($customer_id != NULL) {
-
-
                         ?>
                             <i class="fas fa-sign-out-alt"></i>
                             <a href="{{ route('logout_checkout')}}">Đăng xuất</a>

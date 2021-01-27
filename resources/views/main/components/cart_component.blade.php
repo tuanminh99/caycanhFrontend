@@ -61,7 +61,7 @@
 </div>
 <div class="button-payment">
     <?php
-    $customer_id = Session::get('id');
+    $customer_id = Session::get('customer_id');
     if ($customer_id != NULL) {
     ?>
         <button type="button" class="btn btn-warning"><a href="{{route('thanhtoan')}}">Thanh toán</a></button>

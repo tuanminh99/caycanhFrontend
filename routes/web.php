@@ -15,8 +15,6 @@ use App\Http\Controllers\Layout_Controller;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', 'AdminController@login')->name('login');
-Route::get('/register', 'AdminController@register')->name('register');
 Route::group(['prefix' => 'layout'], function () {
     Route::get('master', 'Layout_Controller@master' );
     Route::get('index', 'Layout_Controller@index' )->name('index');
@@ -35,6 +33,7 @@ Route::group(['prefix' => 'layout'], function () {
     Route::get('updatecart', 'Layout_Controller@updatecart' )->name('updatecart');
     Route::get('deletecart', 'Layout_Controller@deletecart' )->name('deletecart');
     Route::get('thanhtoan', 'Layout_Controller@thanhtoan' )->name('thanhtoan');
+    Route::get('cash_payment', 'Layout_Controller@cash_payment' )->name('cash_payment');
 
     Route::post('login_customer', 'Layout_Controller@login_customer' )->name('login_customer');
     Route::get('login_checkout', 'Layout_Controller@login_checkout' )->name('login_checkout');

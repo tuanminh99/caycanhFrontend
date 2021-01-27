@@ -47,17 +47,12 @@
                     <h4>{{number_format($product->price,0)}}<u>đ</u></h4>
                 </div>
                 <div class="total">
-{{--                    <p>Số lượng:</p>--}}
                     <form class="form-inline">
-{{--                        <div class="form-group mx-sm-3 mb-2">--}}
-{{--                            <input type="number" class="form-control" id="click" >--}}
-{{--                        </div>--}}
-                      <a href="{{route('lienhe')}}" type="submit" class="btn btn-success mb-2">
-                          <i class="fas fa-money-check-alt"> Đặt hàng</i>
-                      </a>&nbsp;
-                        <a href="#" data-url="{{route('addcart',['id'=>$product->id])}}" type="submit" class="btn btn-success mb-2 add-cart">
-{{--                        <a onclick="AddCart({{$product->id}})" href="javascript:" type="submit" class="btn btn-success mb-2">--}}
-{{--                            <a href="{{route('giohang')}}" type="submit" class="btn btn-success mb-2">--}}
+
+                        <a href="#"
+                           data-url="{{route('addcart',['id'=>$product->id])}}"
+                           type="submit"
+                           class="btn btn-success mb-2 add-cart">
                             <i class="fas fa-shopping-cart">  Thêm vào giỏ hàng</i>
                         </a>
                     </form>

@@ -59,17 +59,17 @@
                         <form action="{{route('lienhes')}}" method="POST">
                             @csrf
                             <label for="name">Họ tên</label>
-                            <input type="text" name="name"> <br>
+                            <input type="text" name="name" style="width: 300px;"> <br>
                             <label for="mail">Email</label>
-                            <input type="mail" name="mail"> <br>
+                            <input type="mail" name="mail" style="width: 300px;"> <br>
                             <label for="address">Địa chỉ</label>
-                            <input type="text" name="address"> <br>
+                            <input type="text" name="address" style="width: 300px;"> <br>
                             <label for="phone">Điện thoại</label>
-                            <input type="text" name="phone"> <br>
+                            <input type="text" name="phone" style="width: 300px;"> <br>
                             <label for="content">Nội dung</label>
-                            <input type="text" name="contents"> <br>
-                            <input type="submit" value="Gửi">
-                            <input type="reset" value="Nhập lại">
+                            <input type="text" name="contents" style="width: 300px;"> <br>
+                            <input type="submit" value="Gửi" style="margin-top: 10px;">
+                            <input type="reset" value="Nhập lại" style="margin-top: 10px;">
                         </form>
                     </div>
                     <div class="contact-infor-company ">

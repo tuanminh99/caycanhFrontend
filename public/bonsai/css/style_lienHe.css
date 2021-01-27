@@ -1,17 +1,8 @@
-form{
-	text-align: center;
-}
-
 label{
 	width: 26%;
 	text-align: left;
 }
-input[type="text"], input[type="mail"]{
-	width: 280px;
-}
-input[type="submit"], input[type="reset"]{
-	margin-top: 20px;
-}
+
 input[type="submit"]{
 	background-color: #ff3f00;
 	color: white;

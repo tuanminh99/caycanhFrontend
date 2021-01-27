@@ -28,7 +28,6 @@
                 <i class="fab fa-pagelines">
                     <h5 style="margin-left: 20px">Thanh toán</h5>
                 </i>
-{{--                <img src="{{asset('bonsai/images/icon_section1.png')}}">--}}
             </div>
 
         </div>
@@ -97,7 +96,7 @@
                         @php
                             $total = 0;
                         @endphp
-                        @foreach($carts as $id => $cart)
+                        @foreach((array)$carts as $id => $cart)
                             @php
                                 $total += $cart['price'] * $cart['quantity'];
                             @endphp

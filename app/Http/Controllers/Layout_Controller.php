@@ -31,100 +31,7 @@ class Layout_Controller extends Controller
         $hotInfos = Info::inRandomOrder()->limit(3)->get();
         return view('main.gioithieu',compact('intros','hotInfos','cate'));
     }
-    public function giohang(){
-        $cate = Category::all();
-        $carts = session()->get('cart');
-        return view('main.giohang',compact('cate','carts'));
 
-    }
-    public function addcart($id){
-        $products = Product::find($id);
-        $cart = session()->get('cart');
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity'] = $cart[$id]['quantity']+1;
-        }
-        else {
-            $cart[$id] = [
-                'name' => $products->name,
-                'price' => $products->price,
-                'quantity' => 1,
-                'image' => $products->feature_image_path
-            ];
-        }
-
-        session()->put('cart',$cart);
-        return response()->json([
-            'code' => 200,
-            'message' => 'success'
-        ], 200);
-    }
-    public function updatecart(Request $request) {
-        if ($request->id && $request->quantity) {
-            $carts = session()->get('cart');
-            $carts[$request->id]['quantity'] = $request->quantity;
-            session()->put('cart',$carts);
-            $carts = session()->get('cart');
-            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
-            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
-        }
-    }
-    public function deletecart(Request $request) {
-        if ($request->id) {
-            $carts = session()->get('cart');
-            unset($carts[$request->id]);
-            session()->put('cart',$carts);
-            $carts = session()->get('cart');
-            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
-            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
-        }
-    }
-    public function thanhtoan(){
-        $cate = Category::all();
-        $carts = session()->get('cart');
-        return view('main.thanhtoan',compact('cate','carts'));
-    }
-    public function save_checkout(Request $request) {
-        $dataShippings = array();
-        $dataShippings['name'] = $request->name;
-        $dataShippings['email'] = $request->email;
-        $dataShippings['address'] = $request->address;
-        $dataShippings['phone'] = $request->phone;
-        $dataShippings['note'] = $request->note;
-        $shipping_id = DB::table('shippings')->insertGetId($dataShippings);
-        Session::put('shipping_id',$shipping_id);
-
-        //insert payment
-        $payment_data = array();
-        $payment_data['payment_status']= 'Đang chờ xử lý';
-        $payment_id = DB::table('payments')->insertGetId($payment_data);
-
-        //insert order
-        $order_data = array();
-        $carts = session()->get('cart');
-        $order_data['customer_id']= Session::get('customer_id');
-        $order_data['shipping_id']= Session::get('shipping_id');
-        $order_data['payment_id']= $payment_id;
-        $total = 0;
-            foreach($carts as $id => $cart) {
-                $total += $cart['price'] * $cart['quantity'];
-            }
-        $order_data['order_total']= $total;
-        $order_data['order_status']= 'Đang chờ xử lý';
-        $order_id = DB::table('orders')->insertGetId($order_data);
-
-        //insert order detail
-        foreach ($carts as $id => $cart) {
-            $order_d_data = array();
-            $order_d_data['order_id']= $order_id;
-            $order_d_data['product_id']=$id;
-            $order_d_data['product_name']= $cart['name'];
-            $order_d_data['product_price']= $cart['price'];
-            $order_d_data['product_quantity']= $cart['quantity'];
-            DB::table('order_details')->insert($order_d_data);
-        }
-
-        return redirect() -> route('index');
-    }
     public function tintuc(){
         $infos = Info::paginate(3);
         $cate = Category::all();
@@ -149,41 +56,6 @@ class Layout_Controller extends Controller
         return redirect() -> route('index');
     }
 
-    public function login_customer(Request $request) {
-        $email = $request->email;
-        $password = md5($request->password);
-        $result = DB::table('customers')->where('email',$email)->where('password',$password)->first();
-        if ($result){
-            Session::put('customer_id',$result->customer_id);
-            return redirect() ->route('index');
-        }
-        else {
-            return redirect() ->route('login_checkout');
-        }
-
-    }
-    public function login_checkout() {
-        return view('checkout.login_checkout');
-    }
-    public function logout_checkout() {
-       Session::flush();
-       return redirect() -> route('login_checkout');
-    }
-    public function signup_checkout() {
-        return view('checkout.signup_checkout');
-    }
-    public function add_customer(Request $request) {
-        $data = array();
-        $data['name'] = $request->name;
-        $data['email'] = $request->email;
-        $data['password'] = md5($request->password);
-        $data['phone'] = $request->phone;
-
-        $customer_id = DB::table('customers')->insertGetId($data);
-        Session::put('customer_id',$customer_id);
-        Session::put('name',$request->name);
-        return redirect() -> route('login_checkout');
-    }
     public function sanpham(){
         $products = Product::paginate(16);
         $cate = Category::all();
@@ -220,4 +92,139 @@ class Layout_Controller extends Controller
 
         return view('list_categories.tintucchitiet',compact('hotInfos','cate','infos', 'inf'));
     }
+
+    public function giohang(){
+        $cate = Category::all();
+        $carts = session()->get('cart');
+        return view('main.giohang',compact('cate','carts'));
+
+    }
+    public function addcart($id){
+        $products = Product::find($id);
+        $cart = session()->get('cart');
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = $cart[$id]['quantity']+1;
+        }
+        else {
+            $cart[$id] = [
+                'name' => $products->name,
+                'price' => $products->price,
+                'quantity' => 1,
+                'image' => $products->feature_image_path
+            ];
+        }
+        session()->put('cart',$cart);
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], 200);
+    }
+    public function updatecart(Request $request) {
+        if ($request->id && $request->quantity) {
+            $carts = session()->get('cart');
+            $carts[$request->id]['quantity'] = $request->quantity;
+            session()->put('cart',$carts);
+            $carts = session()->get('cart');
+            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
+            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
+        }
+    }
+    public function deletecart(Request $request) {
+        if ($request->id) {
+            $carts = session()->get('cart');
+            unset($carts[$request->id]);
+            session()->put('cart',$carts);
+            $carts = session()->get('cart');
+            $cartComponent = view('main.components.cart_component',compact('carts'))->render();
+            return response()->json(['cart_component'=>$cartComponent, 'code'=> 200],200);
+        }
+    }
+    public function thanhtoan(){
+        $cate = Category::all();
+        $carts = session()->get('cart');
+        return view('main.thanhtoan',compact('cate','carts'));
+    }
+    public function cash_payment() {
+        $cate = Category::all();
+        return view('checkout.cash_payment',compact('cate'));
+    }
+
+    public function save_checkout(Request $request) {
+        $dataShippings = array();
+        $dataShippings['shipping_name'] = $request->name;
+        $dataShippings['shipping_email'] = $request->email;
+        $dataShippings['shipping_address'] = $request->address;
+        $dataShippings['shipping_phone'] = $request->phone;
+        $dataShippings['shipping_note'] = $request->note;
+        $shipping_id = DB::table('shippings')->insertGetId($dataShippings);
+        Session::put('shipping_id',$shipping_id);
+
+        //insert payment
+        $payment_data = array();
+        $payment_data['payment_status']= 'Đang chờ xử lý';
+        $payment_id = DB::table('payments')->insertGetId($payment_data);
+
+        //insert order
+        $order_data = array();
+        $carts = session()->get('cart');
+        $order_data['customer_id'] = Session::get('customer_id');
+        $order_data['shipping_id'] = Session::get('shipping_id');
+        $order_data['payment_id'] = $payment_id;
+        $total = 0;
+            foreach($carts as $id => $cart) {
+                $total += $cart['price'] * $cart['quantity'];
+            }
+        $order_data['order_total']= $total;
+        $order_data['order_status']= 'Đang chờ xử lý';
+        $order_id = DB::table('orders')->insertGetId($order_data);
+
+        //insert order detail
+        foreach ($carts as $id => $cart) {
+            $order_d_data = array();
+            $order_d_data['order_id']= $order_id;
+            $order_d_data['product_id']=$id;
+            $order_d_data['product_name']= $cart['name'];
+            $order_d_data['product_price']= $cart['price'];
+            $order_d_data['product_quantity']= $cart['quantity'];
+            DB::table('order_details')->insert($order_d_data);
+        }
+        return redirect() -> route('cash_payment');
+    }
+
+    public function login_customer(Request $request) {
+        $email = $request->email;
+        $password = md5($request->password);
+        $result = DB::table('customers')->where('customer_email',$email)->where('password',$password)->first();
+        if ($result){
+            Session::put('customer_id',$result->customer_id);
+            return redirect() ->route('thanhtoan');
+        }
+        else {
+            return redirect() ->route('login_checkout')->with(['mess'=>'a']);
+        }
+
+    }
+    public function login_checkout() {
+        return view('checkout.login_checkout');
+    }
+    public function logout_checkout() {
+       Session::flush();
+       return redirect() -> route('login_checkout');
+    }
+    public function signup_checkout() {
+        return view('checkout.signup_checkout');
+    }
+    public function add_customer(Request $request) {
+        $data = array();
+        $data['customer_name'] = $request->name;
+        $data['customer_email'] = $request->email;
+        $data['password'] = md5($request->password);
+        $data['customer_phone'] = $request->phone;
+
+        $customer_id = DB::table('customers')->insertGetId($data);
+        Session::put('customer_id',$customer_id);
+        Session::put('customer_name',$request->name);
+        return redirect() -> route('login_checkout');
+    }
+
 }
